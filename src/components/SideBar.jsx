@@ -5,7 +5,7 @@ function SideBar({closeSide}) {
   return (
     <div className="h-screen border-legal-stake backdrop-blur-lg w-[254px] absolute sidebar inset-y-0 right-0  visible sm:invisible">
     <button onClick={closeSide} className="absolute left-[208.45px] top-[33.95px]">
-      <img src="public/shared/icon-close.svg" />
+      <img src="/shared/icon-close.svg" />
     </button>
     <div className="pt-[128.95px] pl-8 ">
       <div className="">
@@ -43,7 +43,7 @@ function SideBar({closeSide}) {
           >
             <span className="font-bold pr-[11px] ">
               01
-            </span>{" "}
+            </span>
             DESTINATION
           </NavLink>
           <NavLink
@@ -79,7 +79,7 @@ function SideBar({closeSide}) {
           >
             <span className="font-bold pr-[11px]">
               03
-            </span>{" "}
+            </span>
             TECHNOLOGY
           </NavLink>
         </div>

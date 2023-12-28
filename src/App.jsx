@@ -31,19 +31,4 @@ function App() {
 
 export default App;
 
-// {
-//  path: "/moon",
-//  element: <Moon />,
-//},
-//{
-// path: "/mars",
-//element: <Mars />,
-//},
-//{
-//path: "/europa",
-// element: <Europa />,
-//},
-//{
-// path: "/titan",
-//element: <Titan />,
-// },
+

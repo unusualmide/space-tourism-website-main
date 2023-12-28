@@ -16,11 +16,11 @@ function PageNav() {
   return (
     <>
       <div className="pt-6 sm:pt-0 lg:pt-10 pl-6 sm:pl-[39px] lg:pl-14 text-white flex justify-between items-center">
-        <img src="public/shared/logo.svg" />
+        <img src="/shared/logo.svg" />
         <button onClick={openSide}>
           <img
             className="block pr-6 sm:hidden"
-            src="public/shared/icon-hamburger.svg"
+            src="/shared/icon-hamburger.svg"
           />
         </button>
         <div className="hidden sm:block">
@@ -41,7 +41,7 @@ function PageNav() {
             >
               <span className="font-bold pr-[11px] sm:invisible lg:visible">
                 00
-              </span>{" "}
+              </span>
               HOME
             </NavLink>
             <NavLink
@@ -95,7 +95,7 @@ function PageNav() {
             >
               <span className="font-bold pr-[11px] sm:invisible lg:visible">
                 03
-              </span>{" "}
+              </span>
               TECHNOLOGY
             </NavLink>
           </div>
@@ -107,6 +107,6 @@ function PageNav() {
   );
 }
 
-//className="px-1 font-normal border-b-2 border-white navfont py-9"
+
 
 export default PageNav;
