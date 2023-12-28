@@ -9,7 +9,7 @@ const details = [
     travelTime: "3 days",
     description:
       "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
-    img: "/public/destination/image-moon.png",
+    img: "/destination/image-moon.png",
   },
   {
     name: "Mars",
@@ -17,7 +17,7 @@ const details = [
     travelTime: "9 months",
     description:
       "Don’t just wonder at the red planet from afar; take a trip to the Olympus Mons, the largest volcano in the solar system, in style. You’ll marvel at the Valles Marineris, a canyon system that makes the Grand Canyon look like a crack in the ground.",
-    img: "/public/destination/image-mars.png",
+    img: "/destination/image-mars.png",
   },
   {
     name: "Europa",
@@ -25,7 +25,7 @@ const details = [
     travelTime: "3 years",
     description:
       "If you’re looking for a truly out of this world experience, you’ve found it. Europa is the smallest of the four Galilean moons orbiting Jupiter, and the sixth-closest to the planet. It’s also the sixth-largest moon in the Solar System. Europa’s surface is smooth, with few surface features, such as craters and mountains, instead having a cracked, icy crust.",
-    img: "/public/destination/image-europa.png",
+    img: "/destination/image-europa.png",
   },
   {
     name: "Titan",
@@ -33,7 +33,7 @@ const details = [
     travelTime: "7 years",
     description:
       "Titan is the largest moon of Saturn and the second-largest natural satellite in the Solar System. It is the only moon known to have a dense atmosphere, and the only known body in space, other than Earth, where clear evidence of stable bodies of surface liquid has been found.",
-    img: "/public/destination/image-titan.png",
+    img: "/destination/image-titan.png",
   },
 ];
 
