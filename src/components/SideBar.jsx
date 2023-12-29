@@ -1,9 +1,33 @@
 import { NavLink } from "react-router-dom";
+import {motion } from "framer-motion";
 
 
 function SideBar({closeSide}) {
+  const variants = {
+    open: {
+      x: 0,
+      opacity: 1,
+    },
+    closed: {
+      x: '5%',
+      opacity: 0,
+      transition: {
+         type: 'spring',
+         stiffness: 120,
+         mass: 0.4,
+        ease: 'easeInOut',
+      }
+    }
+  }
+
+
   return (
-    <div className="h-screen border-legal-stake backdrop-blur-lg w-[254px] absolute sidebar inset-y-0 right-0  visible sm:invisible">
+    <motion.div className="h-screen border-legal-stake backdrop-blur-lg w-[254px] absolute sidebar inset-y-0 right-0  visible sm:invisible z-20"
+    variants={variants}
+    initial='closed'
+    animate= 'open'
+
+    >
     <button onClick={closeSide} className="absolute left-[208.45px] top-[33.95px]">
       <img src="/shared/icon-close.svg" />
     </button>
@@ -85,7 +109,7 @@ function SideBar({closeSide}) {
         </div>
       </div>
     </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,6 +1,34 @@
 import { useEffect, useState } from "react";
 import MiniNav from "../../components/MiniNav";
 import PageNav from "../../components/PageNav";
+import { motion } from "framer-motion";
+
+
+const containerVariant = {
+  hidden: {
+    opacity: 0,
+    x: "9vw" ,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      mass: 0.4,
+      damping: 8,
+      stiffness: 120,
+    }
+  }
+}
+
+const childVariant = {
+hover: {
+  scale: 1.1,
+ textShadow: '0px 0px 8px rgb(255, 255, 255)',
+},
+
+}
+
 
 const details = [
   {
@@ -40,25 +68,31 @@ const details = [
 function Destination() {
   const [step, setStep] = useState(1);
 
-  const destination = "Destination"
+  const destination = "Destination";
 
- useEffect(function () {
-      document.title = `${destination}`
- }, [])
-
+  useEffect(function () {
+    document.title = `${destination}`;
+  }, []);
 
   return (
     <div className="w-full h-full bg-cover bg-destination-mobile sm:bg-destination-tablet lg:bg-destination-desktop">
       <PageNav />
       <div className="flex  flex-col lg:flex-row pb-[112px] gap-[26px] sm:gap-[53px] lg:gap-[157px] justify-center items-center sm:justify-start">
         <div className="pt-[34px] sm:pt-[40px] lg:pt-[123px]  pl-6 pr-6 lg:pr-0 lg:pl-[167px] ">
-          <p className="uppercase text-white navfont font-normal text-base sm:text-xl lg:text-[28px] leading-[19.2px] sm:leading-6 lg:leading-[33.6px] sm:text-start text-center">
+          <motion.p
+           variants={childVariant}
+           whileHover='hover'
+            className="uppercase text-white navfont font-normal text-base sm:text-xl lg:text-[28px] leading-[19.2px] sm:leading-6 lg:leading-[33.6px] sm:text-start text-center"
+          >
             <span className="font-bold text-white/25 pr-[28px]">01</span>Pick
             Your Destination
-          </p>
+          </motion.p>
           {
             details.map((image) => (
-              <img
+              <motion.img
+              variants={childVariant}
+              whileHover='hover'
+             
                 key={details.name}
                 className="lg:pt-[120px] sm:pt-[60px] w-[170px] pt-8 sm:w-[300px] lg:w-[445px] inline-flex justify-center items-center"
                 src={image.img}
@@ -71,7 +105,15 @@ function Destination() {
           <MiniNav step={step} setStep={setStep} />
           {
             details.map((detail) => (
-              <div key={detail.name} className="pt-[37px]">
+              <motion.div
+               variants={
+                  containerVariant
+               }
+               initial="hidden"
+                  animate="visible"
+                key={detail.name}
+                className="pt-[37px]"
+              >
                 <h2 className="uppercase text-[56px] leading-[64.18px] sm:text-[80px] lg:text-[100px] sm:leading-[91.68px] lg:leading-[114.6px] text-white ">
                   {detail.name}
                 </h2>
@@ -96,7 +138,7 @@ function Destination() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))[step - 1]
           }
         </div>

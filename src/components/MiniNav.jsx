@@ -1,3 +1,6 @@
+import {motion} from 'framer-motion';
+
+
 function MiniNav({ step, setStep }) {
   function handleMoon() {
     if (step >= 1) {
@@ -37,38 +40,58 @@ function MiniNav({ step, setStep }) {
 
   return (
     <div className="text-base flex gap-[36px] justify-start items-center text-legacy-blue">
-      <button
+      <motion.button
+      whileHover={{
+        scale: 1.1,
+        originX: 0,
+      }}
+      animate={{type: 'string' , stiffness: 300}}
         onClick={handleMoon}
         className={`${
           step === 1 ? "border-b-2 border-white py-2 px-1 text-white" : ""
         } navfont`}
       >
         MOON
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        whileHover={{
+          scale: 1.1,
+          originX: 0,
+        }}
+        animate={{type: 'string' , stiffness: 300}}
         onClick={handleMars}
         className={`${
           step === 2 ? "border-b-2 border-white py-2 px-1 text-white" : ""
         } navfont`}
       >
         MARS
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        whileHover={{
+          scale: 1.1,
+          originX: 0,
+        }}
+        animate={{type: 'string' , stiffness: 300}}
         onClick={handleEuropa}
         className={`${
           step === 3 ? "border-b-2 border-white py-2 px-1 text-white" : ""
         } navfont`}
       >
         EUROPA
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        whileHover={{
+          scale: 1.1,
+          originX: 0,
+        }}
+        animate={{type: 'string' , stiffness: 300}}
         onClick={handleTitan}
         className={`${
           step === 4 ? "border-b-2 border-white py-2 px-1 text-white" : ""
         } navfont`}
       >
         TITAN
-      </button>
+      </motion.button>
     </div>
   );
 }
