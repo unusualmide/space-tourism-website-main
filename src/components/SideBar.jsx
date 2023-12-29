@@ -35,7 +35,7 @@ function SideBar({closeSide}) {
 
   return (
     <AnimatePresence>
-    <motion.div className="h-full border-legal-stake backdrop-blur-lg w-[254px] absolute sidebar inset-y-0 right-0  visible sm:invisible z-20"
+    <motion.div className=" border-legal-stake backdrop-blur-lg w-[254px] fixed sidebar inset-y-0 right-0  visible sm:invisible z-20"
     variants={variants}
     key='modal'
     initial='closed'
