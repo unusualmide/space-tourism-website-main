@@ -98,7 +98,7 @@ function Crew() {
       <div  className="pt-6 sm:pt-10 lg:pt-[123px]  lg:pl-[167px]">
       <p className="uppercase text-white navfont font-normal text-base sm:text-xl lg:text-[28px] leading-[19.2px] sm:leading-6 lg:leading-[33.6px] pl-6 pr-6 lg:pl-0 lg:pr-0 sm:pl-[38.5px] text-center sm:text-start
       "><span className="font-bold text-white/25 pr-[28px]">02</span>Meet Your Crew</p> 
-      {crewDetails.map(crew =>  <div  key={crew.name} className="pt-8 sm:pt-[60px] lg:pt-[154px] text-center lg:text-start">
+      {crewDetails.map(crew =>  <div  key={crew.name} className="pb-[104px]  sm:pb-0 pt-8 sm:pt-[60px] lg:pt-[154px] text-center lg:text-start">
         <motion.div variants={crewVariants} initial='hidden' animate='visible'>
         <p className="uppercase text-base sm:text-2xl lg:text-[32px] leading-[18.34px] sm:leading-[27.5px] lg:leading-[36.67px] text-opacity-50 text-white">{crew.role}</p>
         <h3 className="uppercase text-white text-2xl sm:text-[40px] lg:text-[56px] leading-[27.5px] sm:leading-[45.84px] lg:leading-[64.18px] pt-[15px]">{crew.name}</h3>
@@ -112,7 +112,7 @@ function Crew() {
         </div>
       </div> )[forward-1]}
       </div>
-     {crewDetails.map(image =>  <div key={image.name} className="pt-20  sm:pt-[40px] lg:pt-[200px] inline-flex justify-center items-center ">
+     {crewDetails.map(image =>  <div key={image.name} className="pb-8 sm:pb-0 pt-8  sm:pt-[40px] lg:pt-[200px] inline-flex justify-center items-center order-first sm:-order-none">
         <img className="sm:w-[456.37px] sm:h-[572px] lg:w-[568.07px] lg:h-[712px] w-[327px] h-[223px] object-contain " src={image.images} alt="douglas"/>
       </div> )[forward-1]}
     </div>
