@@ -10,7 +10,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="w-full h-full bg-cover bg-home-mobile sm:bg-home-tablet lg:bg-home-desktop">
+    <div className="w-full h-full relative overflow-hidden bg-cover bg-home-mobile sm:bg-home-tablet lg:bg-home-desktop">
       <PageNav />
       <motion.div  initial={{opacity: 0}} animate={{
       opacity: 1

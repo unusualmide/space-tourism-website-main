@@ -75,7 +75,7 @@ function Destination() {
   }, []);
 
   return (
-    <div className="w-full h-full bg-cover bg-destination-mobile sm:bg-destination-tablet lg:bg-destination-desktop">
+    <div className="w-full h-full relative overflow-hidden bg-cover bg-destination-mobile sm:bg-destination-tablet lg:bg-destination-desktop">
       <PageNav />
       <div className="flex  flex-col lg:flex-row pb-[112px] gap-[26px] sm:gap-[53px] lg:gap-[157px] justify-center items-center sm:justify-start">
         <div className="pt-[34px] sm:pt-[40px] lg:pt-[123px]  pl-6 pr-6 lg:pr-0 lg:pl-[167px] ">

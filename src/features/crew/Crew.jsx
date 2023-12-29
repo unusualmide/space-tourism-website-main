@@ -10,7 +10,7 @@ const crewVariants = {
   },
   visible: {
     x: 0,
-    transition: {type: 'spring', delay: 0.5}
+    transition: {type: 'spring', delay: 0.1}
   }
 }
 
@@ -92,7 +92,7 @@ function Crew() {
 
  
   return (
-    <div className="h-full bg-cover bg-crew-mobile sm:bg-crew-tablet lg:bg-crew-desktop">
+    <div className="h-full  relative overflow-hidden bg-cover bg-crew-mobile sm:bg-crew-tablet lg:bg-crew-desktop">
     <PageNav />
     <div className="flex flex-col lg:flex-row lg:gap-[81.43px]">
       <div  className="pt-6 sm:pt-10 lg:pt-[123px]  lg:pl-[167px]">
@@ -112,7 +112,7 @@ function Crew() {
         </div>
       </div> )[forward-1]}
       </div>
-     {crewDetails.map(image =>  <div key={image.name} className="pt-12  sm:pt-[40px] lg:pt-[200px] inline-flex justify-center items-center">
+     {crewDetails.map(image =>  <div key={image.name} className="pt-16  sm:pt-[40px] lg:pt-[200px] inline-flex justify-center items-center ">
         <img className="sm:w-[456.37px] sm:h-[572px] lg:w-[568.07px] lg:h-[712px] w-[327px] h-[223px] object-contain " src={image.images} alt="douglas"/>
       </div> )[forward-1]}
     </div>

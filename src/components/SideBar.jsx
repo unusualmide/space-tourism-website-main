@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import {motion } from "framer-motion";
+import {AnimatePresence, motion } from "framer-motion";
 
 
 function SideBar({closeSide}) {
@@ -9,24 +9,38 @@ function SideBar({closeSide}) {
       opacity: 1,
     },
     closed: {
-      x: '5%',
+      x: '15%',
       opacity: 0,
       transition: {
          type: 'spring',
          stiffness: 120,
          mass: 0.4,
         ease: 'easeInOut',
+        delay: 0.5
+      }
+    },
+    remove: {
+     
+      opacity: 0,
+      transition: {
+         type: 'spring',
+         stiffness: 120,
+         mass: 0.4,
+        ease: 'easeInOut',
+        delay: 0.5
       }
     }
   }
 
 
   return (
-    <motion.div className="h-screen border-legal-stake backdrop-blur-lg w-[254px] absolute sidebar inset-y-0 right-0  visible sm:invisible z-20"
+    <AnimatePresence>
+    <motion.div className="h-full border-legal-stake backdrop-blur-lg w-[254px] absolute sidebar inset-y-0 right-0  visible sm:invisible z-20"
     variants={variants}
+    key='modal'
     initial='closed'
     animate= 'open'
-
+    exit='remove'
     >
     <button onClick={closeSide} className="absolute left-[208.45px] top-[33.95px]">
       <img src="/shared/icon-close.svg" />
@@ -110,6 +124,7 @@ function SideBar({closeSide}) {
       </div>
     </div>
     </motion.div>
+    </AnimatePresence>
   );
 }
 

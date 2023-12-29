@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PageNav from "../../components/PageNav";
+import { motion } from "framer-motion";
 
 const techDetails = [
   {
@@ -23,6 +24,40 @@ const techDetails = [
 ];
 
 function Technology() {
+  const techVariants = {
+    hidden: {
+      opacity: 0,
+      y: '15vw',
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        mass: 0.4,
+        stiffness: 120,
+      },
+    },
+    }
+
+    const imageVariants = {
+      hidden: {
+        opacity: 0,
+        x: '-8vw',
+      },
+      visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          mass: 0.4,
+          stiffness: 150,
+        },
+      }
+    }
+
+
+
   const [front, setFront] = useState(1);
 
   const technology = "Technology";
@@ -31,6 +66,9 @@ function Technology() {
  useEffect(function () {
   document.title = `${technology}`
 }, [])
+
+
+
 
   function handleOne() {
     if (front >= 1) {
@@ -57,11 +95,12 @@ function Technology() {
       setFront((s) => s - 1);
     }
   }
+  
 
   return (
-    <div className="h-full bg-cover bg-technology-mobile sm:bg-technology-tablet lg:bg-technology-desktop">
+    <div className="h-full bg-cover bg-technology-mobile sm:bg-technology-tablet lg:bg-technology-desktop relative overflow-hidden">
       <PageNav />
-      <div className="pt-6 sm:pt-[40px] lg:pt-[123px] pl-0 sm:pl-[38.5px] lg:pl-[167px]">
+      <div className="pt-6 sm:pt-[40px] lg:pt-[123px] pl-0 sm:pl-[38.5px] lg:pl-[167px] pb-[81px] sm:pb-[97px] lg:pb-[101px]">
         <div className="">
           <p className="uppercase text-white navfont font-normal text-base sm:text-xl lg:text-[28px] leading-[19.2px] sm:leading-6 lg:leading-[33.6px] text-center sm:text-start">
             <span className="font-bold text-white/25 pr-[28px]">03</span>space
@@ -79,9 +118,9 @@ function Technology() {
                 onClick={handleOne}
                 className={`${
                   front === 1
-                    ? "bg-white w-10 h-10 sm:w-[60px] sm:h-[60px] lg:w-[80px] lg:h-[80px] text-legacy-black"
-                    : "bg-none w-[80px] h-[80px] border border-white/50 text-white"
-                } sm:text-2xl lg:text-[32px] leading-[36.67px] text-center rounded-full`}
+                    ? "bg-white w-10 h-10 sm:w-[60px] sm:h-[60px] lg:w-[80px] lg:h-[80px]   text-legacy-black"
+                    : "bg-none w-10 h-10 sm:w-[60px] sm:h-[60px] lg:w-[80px] lg:h-[80px]  border border-white/50 text-white"
+                } rounded-full sm:text-2xl lg:text-[32px]  leading-[36.67px] text-center `}
               >
                 1
               </button>
@@ -108,7 +147,7 @@ function Technology() {
             </div>
             {
               techDetails.map((detail) => (
-                <div key={detail.name}>
+                <motion.div variants={techVariants} initial='hidden' animate='visible' key={detail.name}>
                   <p className="uppercase text-[16px] leading-[19.2px] navfont font-normal text-legacy-blue text-center lg:text-start">
                     the technology...
                   </p>
@@ -118,18 +157,21 @@ function Technology() {
                   <p className="lg:w-[444px] lg:h-[192px] text-center lg:text-start lg:text-lg text-legacy-blue leading-8 barlow pt-[17px] text-[15px]  sm:text-base">
                     {detail.description}
                   </p>
-                </div>
+                </motion.div>
               ))[front - 1]
             }
           </div>
           {
             techDetails.map((images) => (
-              <div
+              <motion.div
+              variants={imageVariants}
+              initial='hidden'
+              animate='visible'
                 key={images.name}
                 className="pt-8 sm:pt-[60px] order-first lg:order-last"
               >
                 <img src={images.portrait} alt="image-launch-vehicle" />
-              </div>
+              </motion.div>
             ))[front - 1]
           }
         </div>
